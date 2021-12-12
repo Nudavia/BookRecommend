@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.ldw.dao.BookDaoTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.063 sec <<< FAILURE!
-test1(org.ldw.dao.BookDaoTest)  Time elapsed: 0.01 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.076 sec <<< FAILURE!
+test1(org.ldw.dao.BookDaoTest)  Time elapsed: 0.013 sec  <<< ERROR!
 java.lang.NullPointerException
 	at org.ldw.dao.BookDaoTest.test1(BookDaoTest.java:15)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
