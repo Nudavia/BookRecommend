@@ -1,0 +1,127 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.box {
+	width: 100%;
+	height: 600px;
+	position: relative;
+	margin-top: 10px;
+}
+
+.list {
+	width: 80%;
+	height:550px;
+	overflow: hidden;
+	position: absolute;
+	top: 20px;
+	left: 10%;
+}
+
+img {
+	width: 400px;
+	height: 500px;
+}
+
+.leftButton,
+.rightButton {
+	width: 70px;
+	height: 100px;
+	background-color: rgba(130, 128, 122, 1.0);
+	position: absolute;
+	font-size: 70px;
+	margin-top: 100px;
+	color: white;
+	cursor: pointer;
+}
+
+.rightButton {
+	right: 0;
+	text-align: right;
+}
+
+li {
+	position: absolute;
+	list-style: none;
+	transition: all 0.3s ease-out;
+	opacity: 0;
+}
+
+
+
+/*左侧图片*/
+.left2 {
+	transform: translate3d(60%, 0, 0) scale(0.7);
+	transform-origin: 0 50%;
+	opacity: 0.6;
+	z-index: 1;
+}
+
+/*左侧图片*/
+.left {
+	transform: translate3d(80%, 0, 0) scale(0.8);
+	transform-origin: 0 50%;
+	opacity: 0.8;
+	z-index: 2;
+}
+/*首页第一张*/
+.center {
+	transform: translate3d(115%, 0, 0) scale(1);
+	z-index: 3;
+	opacity: 1;
+}
+
+/*右侧图片*/
+.right {
+	transform: translate3d(150%, 0, 0) scale(0.8);
+	transform-origin: 100% 50%;
+	opacity: 0.8;
+	z-index: 2;
+}
+
+/*右侧图片*/
+.right2 {
+	transform: translate3d(170%, 0, 0) scale(0.7);
+	transform-origin: 100% 50%;
+	opacity: 0.6;
+	z-index: 1;
+}
+
+
+/*隐藏图片*/
+.hidden {
+	transform: translate3d(0, 0, 0) scale(0.5);
+	opacity: 0;
+	z-index: 0;
+}
+
+.buttons {
+	width: 400px;
+	height: 30px;
+	bottom: 0;
+	left: 50%;
+	margin-left: -140px;
+	position: absolute;
+	text-align: center;
+}
+
+.little {
+	display: block;
+	width: 35px;
+	height: 5px;
+	float: left;
+	margin-left: 10px;
+	background: red;
+	border-width: 0;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+
+.little:hover {
+	cursor: pointer;
+}
+
+.blue {
+	background: blue;
+}
