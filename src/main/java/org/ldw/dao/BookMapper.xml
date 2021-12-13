@@ -10,17 +10,30 @@
         <result column="Book-Author" property="author"/>
         <result column="Year-Of-Publication" property="year"/>
         <result column="Publisher" property="publisher"/>
-        <result column="Image-URL-S" property="imageURL_S"/>
-        <result column="Image-URL-M" property="imageURL_M"/>
-        <result column="Image-URL-L" property="imageURL_L"/>
+        <result column="Image-URL-L" property="imageURL"/>
     </resultMap>
 
-    <select id="getBookByCode" resultMap="BookMap">
-        select *
+    <select id="getBooksByCode" resultMap="BookMap">
+        select ISBN
+             , `Book-Title`
+             , `Book-Author`
+             , `Year-Of-Publication`
+             , Publisher
+             , `Image-URL-L`
         from book_recommend.`BX-Books`
-        where ISBN=#{ISBN}
+        where ISBN = #{ISBN}
     </select>
 
+    <select id="getHeaderBooks" resultMap="BookMap">
+        select ISBN
+             , `Book-Title`
+             , `Book-Author`
+             , `Year-Of-Publication`
+             , Publisher
+             , `Image-URL-L`
+        from book_recommend.`BX-Books`
+        limit #{limit}
+    </select>
 
 
 </mapper>

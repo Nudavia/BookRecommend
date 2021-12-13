@@ -1,4 +1,8 @@
-org\ldw\entity\Book.class
+org\ldw\service\InitService.class
 org\ldw\utils\MyBatisUtils.class
 org\ldw\dao\BookDao.class
+org\ldw\controller\RecommendServlet.class
+org\ldw\entity\Book.class
+org\ldw\controller\InitServlet.class
+org\ldw\service\SearchService.class
 org\ldw\controller\SearchServlet.class

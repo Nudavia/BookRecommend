@@ -2,6 +2,7 @@ package org.ldw.controller;
 
 import net.sf.json.JSONArray;
 import org.ldw.entity.Book;
+import org.ldw.service.InitService;
 import org.ldw.service.SearchService;
 
 import javax.servlet.ServletException;
@@ -13,10 +14,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-
-@WebServlet("/SearchSLT")
-public class SearchServlet extends HttpServlet {
-
+@WebServlet("/RecommendSLT")
+public class RecommendServlet extends HttpServlet {
     private final SearchService service = new SearchService();
 
     @Override
@@ -28,9 +27,9 @@ public class SearchServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         resp.setCharacterEncoding("utf-8");
-        String keyword = req.getParameter("keyword");
-        System.out.println("keyword:" + keyword);
-        List<Book> bookList = service.getBooksByCode(keyword);
+        String code = req.getParameter("code");
+        System.out.println("code:" + code);
+        List<Book> bookList = service.getBooksByCode(code);
         JSONArray jsonArray = JSONArray.fromObject(bookList);
         PrintWriter writer = resp.getWriter();
         writer.append(jsonArray.toString());

@@ -13,7 +13,7 @@ public class BookDaoTest {
     public void test1() {
         SqlSession sqlSession = MyBatisUtils.getSqlSession();
         BookDao bookDao = sqlSession.getMapper(BookDao.class);
-        List<Book> bookList = bookDao.getBookByCode("0002005018");
+        List<Book> bookList = bookDao.getBooksByCode("0002005018");
         for (Book book : bookList) {
             System.out.println(book);
         }
