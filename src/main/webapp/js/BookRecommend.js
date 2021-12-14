@@ -14,6 +14,8 @@ window.onload = function () {
     smallImgs = document.getElementsByClassName("smallImg")
     buttons = document.getElementsByClassName("little")
     bookName = document.getElementById("bookName")
+    bookList = null
+    recommendBookList = null
     //这里必须同步，因为要初始化bookList
     requestData(null, "InitSLT?limit=" + n, showBooks, false,)
     requestData(null, "RecommendSLT?code=" + bigImgs[0].code, showRecommendBooks, false)
@@ -47,11 +49,17 @@ window.onload = function () {
     }
 
     function showBooks(jsonData) {
-        bookList = jsonData
-        var len = n > bookList.length ? bookList.length : n;
+        if (bookList == null)
+            bookList = jsonData
+        var len
+        if (n > jsonData.length)
+            len = jsonData.length
+        else
+            len = n
         for (let i = 0; i < len; i++) {
             var book = jsonData[i]
             bigImgs[i].src = book.imageURL
+            bookList[i] = book
         }
         index = 0
         change(index)
@@ -120,7 +128,10 @@ window.onload = function () {
     }
 
     function changeTitle() {
-        bookName.innerText = bookList[index].title
+        var title = bookList[index].title
+        if (title.length > 80)
+            title = title.substr(0, 90) + "......"
+        bookName.innerText = title
     }
 
 

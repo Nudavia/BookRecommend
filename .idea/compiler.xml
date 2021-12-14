@@ -10,5 +10,8 @@
         <module name="BookRecommend" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="MapReduce" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

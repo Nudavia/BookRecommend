@@ -12,12 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.Random;
 
 
 @WebServlet("/SearchSLT")
 public class SearchServlet extends HttpServlet {
 
-    private final SearchService service = new SearchService();
+    private static final SearchService service = new SearchService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,7 +31,7 @@ public class SearchServlet extends HttpServlet {
         resp.setCharacterEncoding("utf-8");
         String keyword = req.getParameter("keyword");
         System.out.println("keyword:" + keyword);
-        List<Book> bookList = service.getBooksByCode(keyword);
+        List<Book> bookList = service.getBooksByKeywords(keyword, 8);
         JSONArray jsonArray = JSONArray.fromObject(bookList);
         PrintWriter writer = resp.getWriter();
         writer.append(jsonArray.toString());
